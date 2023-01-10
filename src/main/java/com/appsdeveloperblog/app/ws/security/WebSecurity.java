@@ -1,7 +1,7 @@
 package com.appsdeveloperblog.app.ws.security;
 
 
-import com.appsdeveloperblog.app.ws.service.Userservice;
+import com.appsdeveloperblog.app.ws.service.UserService;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,10 +12,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
-    private final Userservice userDetailsService;
+    private final UserService userDetailsService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public WebSecurity(Userservice userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public WebSecurity(UserService userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userDetailsService = userDetailsService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }

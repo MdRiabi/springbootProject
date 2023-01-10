@@ -2,7 +2,7 @@ package com.appsdeveloperblog.app.ws.service.impl;
 
 import com.appsdeveloperblog.app.ws.UserRepository;
 import com.appsdeveloperblog.app.ws.io.entity.UserEntity;
-import com.appsdeveloperblog.app.ws.service.Userservice;
+import com.appsdeveloperblog.app.ws.service.UserService;
 import com.appsdeveloperblog.app.ws.shared.Utils;
 import com.appsdeveloperblog.app.ws.shared.dto.UserDto;
 import org.springframework.beans.BeanUtils;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 @Service
-public class UserServiceImpl implements Userservice {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository userRepository;

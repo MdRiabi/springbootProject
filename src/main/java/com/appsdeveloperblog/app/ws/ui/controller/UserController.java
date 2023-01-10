@@ -1,6 +1,6 @@
 package com.appsdeveloperblog.app.ws.ui.controller;
 
-import com.appsdeveloperblog.app.ws.service.Userservice;
+import com.appsdeveloperblog.app.ws.service.UserService;
 import com.appsdeveloperblog.app.ws.shared.dto.UserDto;
 import com.appsdeveloperblog.app.ws.ui.model.request.UserDetailsRequestModel;
 import com.appsdeveloperblog.app.ws.ui.model.response.UserRest;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    Userservice userService;
+    UserService userService;
     @GetMapping
     public String getUser(){
         return "get user was called";
