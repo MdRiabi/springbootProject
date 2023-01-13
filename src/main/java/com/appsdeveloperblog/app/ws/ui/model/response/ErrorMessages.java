@@ -12,6 +12,9 @@ public enum ErrorMessages {
 
     private String errorMessage;
 
+    ErrorMessages(String s) {
+    }
+
     public String getErrorMessage() {
         return errorMessage;
     }
