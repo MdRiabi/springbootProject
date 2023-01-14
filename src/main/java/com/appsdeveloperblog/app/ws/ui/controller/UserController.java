@@ -10,6 +10,7 @@ import com.appsdeveloperblog.app.ws.ui.model.response.UserRest;
 
 import Exceptions.UserServiceException;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -41,8 +42,12 @@ public class UserController {
         //function return type
         UserRest returnValue = new UserRest();
         if(usereDtails.getFirstName().isEmpty()) throw new UserServiceException(ErrorMessages.MISSING_REQUIRED_FIELD.getErrorMessage());
-        UserDto userDto = new UserDto();
-        BeanUtils.copyProperties(usereDtails , userDto);
+//        UserDto userDto = new UserDto();
+//        BeanUtils.copyProperties(usereDtails , userDto);
+
+        ModelMapper modelMapper = new ModelMapper();
+        UserDto userDto = modelMapper.map(usereDtails, UserDto.class);
+
         UserDto createUser = userService.createUser(userDto);
         BeanUtils.copyProperties(createUser, returnValue);
 
